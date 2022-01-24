@@ -1,0 +1,8 @@
+KafkaSpout        TwitterFilter
+TwitterFilter     TextSanitization
+TextSanitization  SentimentAnalysis
+TextSanitization  HashtagSplitter
+SentimentAnalysis SentimentAnalysisToCassandra
+HashtagSplitter   HashtagCounter
+HashtagCounter    TopHashtag
+TopHashtag        TopHashtagToCassandra

@@ -1,0 +1,13 @@
+#Node_Name   Type    Replication     Grouping   Processor   AvgServiceTime(STRING)   Arrival Rate(STRING)
+KafkaSpout                     S   1   0   10.0.0.2   fixed(0.0)                  expon(-1.0389139971820532e-11,0.024674476149550005)
+#Node_Name   Type   Replication   Grouping   Processor   NbrOutputTweets   AvgServiceTime
+#NbrOutputTweets puede ser: fixed(nro) que retorna nro, o puede ser alguna distribucion discreta.
+#NbrOutputTweets debe ser una distribucion continua
+TwitterFilter                  B   1   0   10.0.0.2   nbinom(1,0.26063,0.0,1.0)   expon(1.646999997256628e-05,0.00040570702420820206)
+TextSanitization               B   1   0   10.0.0.2   fixed(1)                    chi2(8.538972272735748,1.1302448249967578e-05,8.1303876058599739e-06)
+SentimentAnalysis              B   1   0   10.0.0.2   fixed(1)                    norm(5.6866957372520433e-05,4.1274840647727812e-05)
+SentimentAnalysisToCassandra   B   1   0   10.0.0.2   fixed(0)                    chi2(15.309653487531683,0.00041743292362761409,7.6831910658165613e-05)
+HashtagSplitter                B   1   0   10.0.0.2   geom(0.75501766,-1.0,1.0)   invgauss(0.15445372368538285,-4.9988785274398213e-07,3.1879915635084705e-05)
+HashtagCounter                 B   1   0   10.0.0.2   fixed(1)                    invgauss(0.85396023712756708,5.7558973306968071e-07,1.011108790488543e-05)
+TopHashtag                     B   1   0   10.0.0.2   fixed(1)                    invgauss(1.8142564729909452,4.5456273922677438e-07,1.6999125440999171e-06)
+TopHashtagToCassandra          B   1   0   10.0.0.2   fixed(0)                    norm(0.0034467907183198024,0.0009139211239379576)

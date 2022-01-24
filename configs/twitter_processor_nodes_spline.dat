@@ -1,0 +1,13 @@
+#Node_Name   Type    Replication     Grouping   Processor   AvgServiceTime(STRING)   Arrival Rate(STRING)
+KafkaSpout                     S   1   0   10.0.0.2   fixed(0.0)                  spline(/home/rsolar/STORM/storm-simulator/configs/data/ArrivalTime.dat)
+#Node_Name   Type   Replication   Grouping   Processor   NbrOutputTweets   AvgServiceTime
+#NbrOutputTweets puede ser: fixed(nro) que retorna nro, o puede ser alguna distribucion discreta.
+#NbrOutputTweets debe ser una distribucion continua
+TwitterFilter                  B   1   0   10.0.0.2   spline(/home/rsolar/STORM/storm-simulator/configs/data/TwitterFilterTuples.dat)  spline(/home/rsolar/STORM/storm-simulator/configs/data/TwitterFilter.dat)
+TextSanitization               B   1   0   10.0.0.2   fixed(1)                    spline(/home/rsolar/STORM/storm-simulator/configs/data/TextSanitization.dat)
+SentimentAnalysis              B   1   0   10.0.0.2   fixed(1)                    spline(/home/rsolar/STORM/storm-simulator/configs/data/SentimentAnalysis.dat)
+SentimentAnalysisToCassandra   B   1   0   10.0.0.2   fixed(0)                    spline(/home/rsolar/STORM/storm-simulator/configs/data/SentimentAnalysisToCassandra.dat)
+HashtagSplitter                B   1   0   10.0.0.2   spline(/home/rsolar/STORM/storm-simulator/configs/data/HashtagSplitterTuples.dat)  spline(/home/rsolar/STORM/storm-simulator/configs/data/HashtagSplitter.dat)
+HashtagCounter                 B   1   0   10.0.0.2   fixed(1)                    spline(/home/rsolar/STORM/storm-simulator/configs/data/HashtagCounter.dat)
+TopHashtag                     B   1   0   10.0.0.2   fixed(1)                    spline(/home/rsolar/STORM/storm-simulator/configs/data/TopHashtag.dat)
+TopHashtagToCassandra          B   1   0   10.0.0.2   fixed(0)                    spline(/home/rsolar/STORM/storm-simulator/configs/data/TopHashtagToCassandra.dat)

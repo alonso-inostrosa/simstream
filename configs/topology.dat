@@ -1,0 +1,7 @@
+#	Source	Target
+#EJ:	Spout_0	Bolt_0
+#Significa que Bolt_0 obtiene tuplas desde Spout_0
+Spout_0 Bolt_0
+Spout_1 Bolt_0
+Bolt_0 Bolt_1
+Bolt_0 Bolt_2
