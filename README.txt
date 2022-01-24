@@ -1,1 +1,6 @@
-En este branch se tiene el codigo el simulador Storm. Este branch no incluye temas de agentes (individuos) que huyen en caso de desastre.
+Requiere Libreria libcppsim, descargar desde https://www.moreno.marzolla.name/software/ especificamente desde: https://www.moreno.marzolla.name/software/libcppsim-0.2.5.tar.gz
+
+./configure CPPFLAGS=-std=c++11
+./make
+
+Para compilar, revisar que makefile posea el flag -std=c++11
